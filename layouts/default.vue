@@ -1,9 +1,9 @@
 <template>
-  <div class="min-h-screen flex flex-col bg-white text-slate-800">
+  <div class="min-h-screen flex flex-col bg-white text-slate-800 overflow-x-hidden">
     <header class="shadow-sm">
       <div class="bg-rose-400 text-white text-sm">
-        <div class="max-w-6xl mx-auto px-4 py-2 flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div class="flex flex-wrap items-center gap-x-6 gap-y-2">
+        <div class="max-w-6xl mx-auto px-4 py-2 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+          <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs sm:text-sm">
             <span class="flex items-center gap-2">
               <PhoneIcon class="h-4 w-4" />
               <span>(626)545-1617</span>
@@ -13,19 +13,19 @@
               <span>contact@ivysurrogacy.com</span>
             </span>
           </div>
-          <div class="flex items-center gap-4 text-base">
-            <div class="flex items-center gap-3">
+          <div class="flex flex-wrap items-center gap-3 text-sm sm:text-base">
+            <div class="flex items-center gap-3 flex-wrap">
               <a
                 v-for="social in socials"
                 :key="social.name"
                 :href="social.href"
-                class="hover:text-white/80 transition"
+                class="hover:text-white/80 transition text-xs sm:text-sm"
                 :aria-label="social.name"
               >
                 {{ social.label }}
               </a>
             </div>
-            <select class="bg-white/85 text-gray-900 text-sm rounded px-2 py-1 focus:outline-none focus:ring-2 focus:ring-white/70">
+            <select class="bg-white/85 text-gray-900 text-xs sm:text-sm rounded px-2 py-1 focus:outline-none focus:ring-2 focus:ring-white/70">
               <option>English</option>
               <option>中文</option>
             </select>
@@ -45,11 +45,15 @@
             </div>
           </div>
 
-          <nav class="flex-1">
-            <ul class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm font-medium text-slate-700">
-              <li v-for="link in navLinks" :key="link.label" class="flex items-center gap-1 cursor-pointer hover:text-rose-500 transition">
+          <nav class="flex-1 w-full">
+            <ul class="flex flex-wrap md:flex-nowrap items-center gap-x-4 gap-y-2 text-sm font-medium text-slate-700 overflow-x-auto">
+              <li
+                v-for="link in navLinks"
+                :key="link.label"
+                class="flex items-center gap-1 cursor-pointer hover:text-rose-500 transition"
+              >
                 <a :href="link.href">{{ link.label }}</a>
-                <ChevronDownIcon v-if="link.dropdown" class="h-4 w-4" />
+                <ChevronDownIcon v-if="link.dropdown" class="h-4 w-4 hidden sm:inline-block" />
               </li>
             </ul>
           </nav>
@@ -57,6 +61,12 @@
           <NuxtLink
             to="/login"
             class="hidden md:inline-flex items-center gap-2 text-sm font-semibold text-rose-500 border border-rose-200 rounded-full px-4 py-1.5 hover:bg-rose-50 transition"
+          >
+            Login / Signup
+          </NuxtLink>
+          <NuxtLink
+            to="/login"
+            class="md:hidden inline-flex items-center justify-center text-sm font-semibold text-rose-500 border border-rose-200 rounded-full px-4 py-1.5 hover:bg-rose-50 transition w-full"
           >
             Login / Signup
           </NuxtLink>
