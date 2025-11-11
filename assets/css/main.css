@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    font-family: 'Playfair Display', 'Times New Roman', Times, 'Songti SC', serif;
+  }
+
+  body {
+    @apply text-gray-700 bg-white antialiased;
+    font-family: inherit;
+  }
+}
