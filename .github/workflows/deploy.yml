@@ -26,6 +26,8 @@ jobs:
 
       - name: Generate static site
         run: npm run generate
+        env:
+          NUXT_APP_BASE_URL: /ivy-surrogacy/
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
