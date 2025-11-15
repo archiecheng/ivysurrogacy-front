@@ -8,14 +8,14 @@
       <NuxtLink to="/login" class="hover:text-pink-500 transition">Log In</NuxtLink>
     </div>
 
-    <section class="flex-1 flex items-center justify-center px-4 py-8">
+    <section class="flex-1 flex items-center justify-center px-4 py-8 box-border">
       <div
         v-motion
         :initial="{ opacity: 0, y: 24 }"
         :enter="{ opacity: 1, y: 0, transition: { duration: 350 } }"
         class="w-full max-w-3xl bg-white/95 backdrop-blur rounded-[32px] shadow-[0_25px_75px_rgba(249,116,154,0.18)]"
       >
-        <div class="px-10 py-12 flex flex-col gap-8">
+        <div class="px-10 py-12 flex flex-col">
           <div>
             <p class="text-xs uppercase tracking-[0.35em] text-pink-400">create</p>
             <h1 class="text-3xl font-semibold text-gray-800 mt-1">Sign up for Ivy Surrogacy</h1>
@@ -24,7 +24,7 @@
             </p>
           </div>
 
-          <form class="space-y-6" @submit.prevent="handleSignup">
+          <form class="space-y-6 mb-4" @submit.prevent="handleSignup">
             <div class="space-y-2">
               <label class="text-sm font-medium text-gray-600" for="email">Email address</label>
               <input id="email" v-model="form.email" type="email" placeholder="you@example.com" required class="underlined-input" />
@@ -78,7 +78,7 @@
             </button>
           </form>
 
-          <div class="flex flex-wrap items-center gap-4 text-sm text-gray-500">
+          <div class="flex flex-wrap items-center gap-4 text-sm text-gray-500 justify-center">
             <NuxtLink to="/login" class="text-pink-500 hover:text-pink-600 transition">Already have an account?</NuxtLink>
             <NuxtLink to="/forgot-password" class="hover:text-pink-600 transition">Forgot password?</NuxtLink>
           </div>
